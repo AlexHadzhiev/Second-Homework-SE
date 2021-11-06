@@ -12,8 +12,6 @@ def index(request):
     response = requests.get(link).json()
     included = response['included']
     
-# scroll through the json of the predictions and change the times and ids of the cars
-
     for prediction in response['data']:
         schedule_id = prediction['relationships']['schedule']['data']['id']
         for record in included:
